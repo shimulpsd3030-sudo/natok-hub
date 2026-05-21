@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ভিডিও দেখুন – NatokHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Monetag Popunder -->
+<script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('shebudifam.com',11026720,document.createElement('script'))</script>
+
+<style>
+:root {
+  --bg: #0d0d0f; --surface: #16161a; --card: #1e1e24; --border: #2a2a35;
+  --accent: #e63946; --gold: #ffd166; --green: #06d6a0; --text: #f0f0f5; --muted: #888899;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Hind Siliguri',sans-serif; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; }
+
+.logo { font-size:1.5rem; font-weight:700; color:var(--accent); margin-bottom:24px; }
+.logo span { color:var(--gold); }
+
+.box { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:32px 28px; max-width:440px; width:100%; text-align:center; }
+
+.video-title { font-size:.95rem; font-weight:600; color:var(--text); margin-bottom:24px; background:var(--card); padding:10px 14px; border-radius:8px; border-left:3px solid var(--accent); text-align:left; line-height:1.5; }
+
+/* Steps */
+.steps { display:flex; align-items:center; justify-content:center; margin-bottom:28px; }
+.step { display:flex; flex-direction:column; align-items:center; gap:4px; }
+.step-dot { width:34px; height:34px; border-radius:50%; border:2px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:700; color:var(--muted); transition:all .3s; }
+.step-dot.active { border-color:var(--accent); color:var(--accent); background:rgba(230,57,70,.12); }
+.step-dot.done { border-color:var(--green); color:var(--green); background:rgba(6,214,160,.12); }
+.step-label { font-size:.68rem; color:var(--muted); margin-top:2px; }
+.step-line { width:48px; height:2px; background:var(--border); margin:0 4px 20px; transition:background .3s; }
+.step-line.done { background:var(--green); }
+
+/* Ad block */
+.ad-block { display:none; }
+.ad-block.visible { display:block; }
+.ad-label { font-size:.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:14px; }
+
+/* Countdown ring */
+.countdown-wrap { display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:18px; }
+.ring-box { position:relative; width:80px; height:80px; }
+.ring-box svg { transform:rotate(-90deg); }
+.ring-box circle { fill:none; stroke-width:5; }
+.ring-bg { stroke:var(--border); }
+.ring-fg { stroke:var(--accent); stroke-linecap:round; transition:stroke-dashoffset .9s linear; }
+.ring-num { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:1.8rem; font-weight:700; }
+.cd-text { font-size:.85rem; color:var(--muted); line-height:1.6; }
+
+/* Progress bar */
+.bar-wrap { background:var(--card); border-radius:6px; height:8px; overflow:hidden; margin-bottom:14px; }
+.bar-fill { height:100%; border-radius:6px; background:linear-gradient(90deg,var(--accent),var(--gold)); transition:width 1s linear; }
+.wait-note { font-size:.78rem; color:var(--muted); }
+.wait-note span { color:var(--accent); font-weight:700; }
+
+/* Success */
+.success-block { display:none; }
+.success-block.visible { display:block; }
+.success-icon { font-size:3rem; margin-bottom:12px; animation:pop .4s ease; }
+@keyframes pop { 0%{transform:scale(0)} 70%{transform:scale(1.2)} 100%{transform:scale(1)} }
+.success-block h2 { font-size:1.2rem; font-weight:700; color:var(--green); margin-bottom:8px; }
+.success-block p { color:var(--muted); font-size:.9rem; margin-bottom:20px; line-height:1.6; }
+
+.tg-btn { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#229ED9,#1a7ab5); color:#fff; padding:14px 28px; border-radius:10px; font-family:'Hind Siliguri',sans-serif; font-size:1rem; font-weight:700; text-decoration:none; animation:pulse 1.5s ease infinite; box-shadow:0 4px 20px rgba(34,158,217,.4); }
+@keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.03);} }
+
+.back { margin-top:20px; display:inline-block; color:var(--muted); font-size:.82rem; text-decoration:none; }
+.back:hover { color:var(--text); }
+</style>
+</head>
+<body>
+
+<div class="logo">Natok<span>Hub</span></div>
+
+<div class="box">
+  <div class="video-title" id="vtitle">🎬 লোড হচ্ছে...</div>
+
+  <!-- Steps -->
+  <div class="steps">
+    <div class="step"><div class="step-dot active" id="d1">১</div><div class="step-label">বিজ্ঞাপন ১</div></div>
+    <div class="step-line" id="l1"></div>
+    <div class="step"><div class="step-dot" id="d2">২</div><div class="step-label">বিজ্ঞাপন ২</div></div>
+    <div class="step-line" id="l2"></div>
+    <div class="step"><div class="step-dot" id="d3">✓</div><div class="step-label">ভিডিও</div></div>
+  </div>
+
+  <!-- Ad -->
+  <div class="ad-block visible" id="adBlock">
+    <div class="ad-label" id="adLabel">বিজ্ঞাপন ১ / ২</div>
+    <div class="countdown-wrap">
+      <div class="ring-box">
+        <svg viewBox="0 0 80 80" width="80" height="80">
+          <circle class="ring-bg" cx="40" cy="40" r="35"/>
+          <circle class="ring-fg" id="ringFg" cx="40" cy="40" r="35" stroke-dasharray="219.9" stroke-dashoffset="0"/>
+        </svg>
+        <div class="ring-num" id="ringNum">10</div>
+      </div>
+      <div class="cd-text">
+        <strong id="cdMain">প্রথম বিজ্ঞাপন চলছে...</strong><br>
+        <span id="cdSub">একটু ধৈর্য ধরুন 🙏</span>
+      </div>
+    </div>
+    <div class="bar-wrap"><div class="bar-fill" id="barFill" style="width:0%"></div></div>
+    <div class="wait-note">⏳ আর <span id="secLeft">10</span> সেকেন্ড অপেক্ষা করুন</div>
+  </div>
+
+  <!-- Success -->
+  <div class="success-block" id="successBlock">
+    <div class="success-icon">🎉</div>
+    <h2>আনলক সফল!</h2>
+    <p>আপনার ভিডিও Telegram-এ পাঠানো হচ্ছে।<br>নিচের বোতামে ক্লিক করুন।</p>
+    <a class="tg-btn" id="tgLink" href="#" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.608c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.248 14.54l-2.94-.916c-.64-.203-.653-.64.136-.948l11.5-4.432c.533-.194.998.13.618.004z"/></svg>
+      Telegram-এ ভিডিও পান
+    </a>
+  </div>
+
+  <a class="back" href="index.html">← সব নাটক দেখুন</a>
+</div>
+
+<script>
+// URL params
+const p     = new URLSearchParams(location.search);
+const vidId = p.get('vid') || '';
+const title = decodeURIComponent(p.get('title') || 'ভিডিও');
+const BOT   = 'bachelor_point_bd_bot';
+
+document.getElementById('vtitle').textContent = '🎬 ' + title;
+
+// Ad durations: phase 1 = 10s, phase 2 = 15s
+const DURATIONS = {1: 10, 2: 15};
+const CIRC = 2 * Math.PI * 35; // 219.9
+const ringFg = document.getElementById('ringFg');
+ringFg.setAttribute('stroke-dasharray', CIRC);
+
+function dot(id) { return document.getElementById(id); }
+
+function startPhase(ph) {
+  let rem = DURATIONS[ph];
+  const total = rem;
+
+  document.getElementById('adLabel').textContent = `বিজ্ঞাপন ${ph} / ২`;
+  document.getElementById('cdMain').textContent  = ph === 1 ? 'প্রথম বিজ্ঞাপন চলছে...' : 'দ্বিতীয় বিজ্ঞাপন চলছে...';
+  document.getElementById('secLeft').textContent = rem;
+  document.getElementById('ringNum').textContent = rem;
+
+  // Step dots
+  dot('d1').className = 'step-dot ' + (ph === 1 ? 'active' : 'done');
+  dot('d2').className = 'step-dot ' + (ph === 2 ? 'active' : ph > 2 ? 'done' : '');
+  dot('l1').className = 'step-line ' + (ph > 1 ? 'done' : '');
+
+  tick();
+  const timer = setInterval(() => {
+    rem--;
+    tick();
+    if (rem <= 0) {
+      clearInterval(timer);
+      ph === 1 ? startPhase(2) : showSuccess();
+    }
+  }, 1000);
+
+  function tick() {
+    const prog = (total - rem) / total;
+    ringFg.style.strokeDashoffset = CIRC * (1 - prog);
+    document.getElementById('ringNum').textContent = rem;
+    document.getElementById('secLeft').textContent = rem;
+    document.getElementById('barFill').style.width = (prog * 100) + '%';
+  }
+}
+
+function showSuccess() {
+  document.getElementById('adBlock').classList.remove('visible');
+  document.getElementById('successBlock').classList.add('visible');
+  dot('d2').className = 'step-dot done';
+  dot('d3').className = 'step-dot done';
+  dot('l2').className = 'step-line done';
+
+  const link = `https://t.me/${BOT}?start=get_${vidId}`;
+  document.getElementById('tgLink').href = link;
+  setTimeout(() => { window.location.href = link; }, 1500);
+}
+
+setTimeout(() => startPhase(1), 400);
+</script>
+</body>
+</html>
