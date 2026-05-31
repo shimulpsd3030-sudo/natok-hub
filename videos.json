@@ -1,6 +1,6 @@
 {
-  "updated": "2026-05-31T18:34:57.824899+00:00",
-  "total": 10,
+  "updated": "2026-05-31T18:35:07.732056+00:00",
+  "total": 9,
   "videos": [
     {
       "id": 1012,
@@ -81,15 +81,6 @@
       "thumb": "https://api.telegram.org/file/bot8820019369:AAGTrXB68QBWkHiv2DqJTSCYcax8BiOw8jY/thumbnails/file_3.jpg",
       "category": "natok",
       "episode": 91,
-      "date": "2026-05-22"
-    },
-    {
-      "id": 1003,
-      "msgId": 5,
-      "title": "[Episode 90]",
-      "thumb": "https://api.telegram.org/file/bot8820019369:AAGTrXB68QBWkHiv2DqJTSCYcax8BiOw8jY/thumbnails/file_2.jpg",
-      "category": "natok",
-      "episode": 90,
       "date": "2026-05-22"
     }
   ]
