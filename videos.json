@@ -1,6 +1,6 @@
 {
-  "updated": "2026-05-31T18:35:30.723467+00:00",
-  "total": 4,
+  "updated": "2026-05-31T18:35:35.254989+00:00",
+  "total": 3,
   "videos": [
     {
       "id": 1012,
@@ -28,15 +28,6 @@
       "category": "natok",
       "episode": null,
       "date": "2026-05-28"
-    },
-    {
-      "id": 1009,
-      "msgId": 11,
-      "title": "[Episode 96]",
-      "thumb": "https://api.telegram.org/file/bot8820019369:AAGTrXB68QBWkHiv2DqJTSCYcax8BiOw8jY/thumbnails/file_8.jpg",
-      "category": "natok",
-      "episode": 96,
-      "date": "2026-05-22"
     }
   ]
 }
