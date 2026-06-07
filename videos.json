@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-07T18:14:42.030128+00:00",
-  "total": 12,
+  "updated": "2026-06-07T18:14:46.708315+00:00",
+  "total": 11,
   "videos": [
     {
       "id": 1030,
@@ -70,15 +70,6 @@
       "msgId": 33,
       "title": "Private Tutor",
       "thumb": "https://raw.githubusercontent.com/shimulpsd3030-sudo/natok-hub/main/thumbs/thumb_33.jpg",
-      "category": "natok",
-      "episode": null,
-      "date": "2026-05-31"
-    },
-    {
-      "id": 1022,
-      "msgId": 32,
-      "title": "Madulas-",
-      "thumb": "https://raw.githubusercontent.com/shimulpsd3030-sudo/natok-hub/main/thumbs/thumb_32.jpg",
       "category": "natok",
       "episode": null,
       "date": "2026-05-31"
