@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-07T18:14:26.910916+00:00",
-  "total": 16,
+  "updated": "2026-06-07T18:14:30.464319+00:00",
+  "total": 15,
   "videos": [
     {
       "id": 1030,
@@ -106,15 +106,6 @@
       "msgId": 29,
       "title": "Kulong",
       "thumb": "https://raw.githubusercontent.com/shimulpsd3030-sudo/natok-hub/main/thumbs/thumb_29.jpg",
-      "category": "natok",
-      "episode": null,
-      "date": "2026-05-31"
-    },
-    {
-      "id": 1018,
-      "msgId": 28,
-      "title": "Kabitan",
-      "thumb": "https://raw.githubusercontent.com/shimulpsd3030-sudo/natok-hub/main/thumbs/thumb_28.jpg",
       "category": "natok",
       "episode": null,
       "date": "2026-05-31"
